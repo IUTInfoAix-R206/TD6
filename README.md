@@ -1,10 +1,45 @@
-# R2.06 - TD6 - Vues, tables système et rappels SQL
+# R2.06 - TD6 - Requêtes avec SQL
 
 TD de bases de données de l'IUT d'Aix-Marseille (ressource R2.06, Exploitation d'une base de données).
 
-- **[Ouvrir la page du TD](https://iutinfoaix-r206.github.io/TD6/)**
+- **[Faire le TD dans le navigateur](https://iutinfoaix-r206.github.io/TD6/)**
 - [Sujet PDF](sujet.pdf)
 
 Ce dépôt est généré automatiquement : toute modification manuelle sera écrasée à la prochaine publication.
 
+## Utilisation
+
+- Ouvrez la page (lien GitHub Pages du dépôt).
+- Pour chaque question, écrivez votre requête (SQL ou expression algébrique)
+  puis cliquez **Exécuter**
+  (ou `Ctrl`/`Cmd` + `Entrée`).
+- Le tableau affiche votre résultat ; les pastilles indiquent si le nombre de
+  colonnes, le nombre de lignes et le contenu correspondent à ce qui est attendu.
+  Un **Résultat exact** confirme la bonne réponse.
+
+## Vos réponses
+
+- Elles sont enregistrées **dans votre navigateur uniquement** (localStorage) :
+  rien n'est envoyé à un serveur, et elles sont conservées entre les sessions sur
+  le même navigateur/ordinateur.
+- Le bouton **Exporter** télécharge un fichier contenant toutes vos réponses
+  (`.sql` pour un TD de SQL, `.algebre` pour un TD d'algèbre ; un bloc par
+  question) : c'est ce fichier que vous pourrez rendre.
+- Le bouton **Tout effacer** réinitialise vos réponses.
+
+## Notes techniques
+
+- La base est **réinitialisée à chaque exécution** : vous pouvez tester des
+  `INSERT`/`UPDATE`/`DELETE` sans risque de corrompre les données.
+- La page simule Oracle, le SGBD du cours : les requêtes s'écrivent en syntaxe
+  Oracle et donnent les mêmes résultats (et les mêmes erreurs) que sous Oracle.
+- La correction n'est **pas** présente dans cette page : la vérification repose
+  sur une empreinte (hash) du résultat attendu, calculée à l'avance.
+- La page doit être servie en **http(s)** (GitHub Pages, ou `python3 -m http.server`).
+  Elle ne fonctionne pas en l'ouvrant directement via `file://`.
+
+## Crédits
+
+Généré depuis les sources des TD de bases de données de l'IUT d'Aix-Marseille.
+Moteur SQLite : [sql.js](https://github.com/sql-js/sql.js) (licence MIT).
 Contenu sous licence **CC BY-NC-SA**.

@@ -1,0 +1,659 @@
+{
+  "formatVersion": 1,
+  "tdId": "r2.06-td6",
+  "tdLabel": "R2.06 - TD6",
+  "title": "Requêtes avec SQL",
+  "intro": "Formulez, en SQL, sur la base de données exemple, les requêtes d'interrogation suivantes.",
+  "database": {
+    "name": "gestion-pedagogique",
+    "schemaFile": "data/schema.sql",
+    "insertFile": "data/insert.sql",
+    "oracleFile": "data/oracle.sql"
+  },
+  "canon": {
+    "algo": "sha256",
+    "specVersion": 1
+  },
+  "sections": [
+    {
+      "name": "Création et manipulation de vues",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Répondez aux questions suivantes sous forme de requêtes de création de vues, avant de consulter chaque vue par une requête d'interrogation ou des tentatives d'insertion, une valide et une invalide, pour les vues de mise à jour. Les vues à créer ont pour objectifs de créer de nouvelles relations logiques répondants à des besoins fréquents, d'assurer la prise en compte des contraintes d'intégrité de la base ou de limiter la consultation des données pour certains utilisateurs."
+        },
+        {
+          "type": "question",
+          "id": "q1",
+          "num": "1",
+          "statement": "Quels sont les numéros, noms et prénoms des professeurs de seconde année ? Nommez la vue `Q1`.",
+          "expectedCols": 3,
+          "expectedRows": 9,
+          "expectedLabel": "3 attributs, 9 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "5af13c82842b429ec31345f929213bbb8a328613c0865957d22bbb2c23727701"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "jointure",
+            "distinct"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q1": "8edbf2a3c8808557e917835f39d3f40f4dc83592630abaf846a8145888dd6e16"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "instruction",
+          "text": "Créez des vues supprimant les calculs complexes des questions correspondantes du TD5 : Interrogations avancées en SQL."
+        },
+        {
+          "type": "question",
+          "id": "q2",
+          "num": "2",
+          "statement": "À partir du nombre d'étudiants de chaque groupe d'étudiants de seconde année, donnez le nombre moyen d'étudiants. Nommez la vue `Q2`.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (9)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "2ef2e6e28e13aaa61a8cae6b6b7038d13699e8171671af9f5a4986f013631c61"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "groupement",
+            "calcul-vertical"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q2": "fcc361c0bb18c79bc140d1b000d31c0690dd1e8b8e8135e16f7125b494878028"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q3",
+          "num": "3",
+          "statement": "À partir du nombre d'étudiants à qui chaque professeur enseigne, quel est le plus grand nombre d'étudiants ? Nommez la vue `Q3`.",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (45)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "c0e764634a8f8ca3b10118e108ba657b25ea2baa7858b6a2715a313f60f5b643"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "groupement",
+            "calcul-vertical"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q3": "14317e115059bb44fe56410176865af1f872036a789d544253d9b7127aa8a1b8"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q4",
+          "num": "4",
+          "statement": "À partir de la somme d'heures de cours pour chaque discipline, donnez les codes et libellés des modules ainsi que le pourcentage de ces sommes d'heures par rapport au total des heures de cours dans la discipline correspondante. Nommez la vue `Q4`.",
+          "expectedCols": 3,
+          "expectedRows": 9,
+          "expectedLabel": "3 attributs, 9 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "d1a36c6e49d8522036d62834c57fb41777df801daaba5d9fd77a5a7d8b12ef84"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "jointure",
+            "calcul-vertical",
+            "groupement"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q4": "ce2fda279f56be7a22c868cbebcc285ed08b9189c2eb0cdab8457491e700bb8c"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q5",
+          "num": "5",
+          "statement": "À partir, du nombre de professeurs qui enseignent chaque module d'une part, et de la moyenne de test maximale de ces modules d'autre part, donnez les codes des modules, le nombre de professeurs qui les enseignent et la moyenne de test maximale de ces Modules. Nommez les vues `Q51` (nombre de professeurs) et `Q52` (moyenne maximale).",
+          "expectedCols": 3,
+          "expectedRows": 6,
+          "expectedLabel": "3 attributs, 6 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "23ff18bcacf76786dffc361c653ed207b55708ee88400bee5407092c967cdf48"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "groupement",
+            "calcul-vertical",
+            "distinct"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q51": "b9b462e00c8cd966d5f252c5db2f0b08d7f9c7d1f49a9b78317d49c937ece126",
+                  "Q52": "5cd84ccb06a31910fb15fed535d75001649f4ea3a642e2560832cc07039b2739"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q6",
+          "num": "6",
+          "statement": "À partir de la moins bonne et de la meilleure moyenne de test du module ACSI, donnez les numéros des étudiants et les écarts respectifs entre les éventuelles moyennes de test des étudiants et ces moyennes extrêmes. Nommez la vue `Q6`.",
+          "expectedCols": 3,
+          "expectedRows": 29,
+          "expectedLabel": "3 attributs, 29 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "4915c31ab269f75a48e41917a58b001341c2aa8c6e2f4b570882f97831df444d"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "calcul-vertical",
+            "sous-requête"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [],
+            "states": [
+              {
+                "objects": {
+                  "Q6": "21d6fe80717953f96fb4eb7704179b52407ad49e022a23677ed87180c65e2532"
+                },
+                "probes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q7",
+          "num": "7",
+          "statement": "Créer une vue de mise à jour permettant d'assurer que les discipline insérées ou modifiées ne peuvent être que Gestion, Informatique ou Maths. Nommez la vue `Q7`.",
+          "expectedCols": null,
+          "expectedRows": null,
+          "expectedLabel": null,
+          "orderSensitive": false,
+          "hashesSorted": [],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "vue",
+            "dml"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [
+              "UPDATE Q7 SET DISCIPLINE = NULL WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'COM' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'COMMUNICATION' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'COMMUNICATION ECRITE' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'DRO' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'DROIT' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'EGO' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'GESTION' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'INFORMATIQUE' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'MATHS' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'ZZZ' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'com' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'communication' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'communication ecrite' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'dro' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'droit' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'ego' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'gestion' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'informatique' WHERE CODE = 'PINFO1'",
+              "UPDATE Q7 SET DISCIPLINE = 'maths' WHERE CODE = 'PINFO1'"
+            ],
+            "states": [
+              {
+                "objects": {
+                  "Q7": "f7c1dba22951d2bf3b5051a40559defc90dc327cdac9f803c24c2a94697b501b"
+                },
+                "probes": "e1af17dc20dc06bc6fd66fb43b854e55e20d87f57d94ef37a0040adb463d3f59"
+              }
+            ]
+          }
+        },
+        {
+          "type": "question",
+          "id": "q8",
+          "num": "8",
+          "statement": "Créer une vue de mise à jour permettant d'assurer que les responsables d'un Module inséré ou modifié doivent enseigner ce Module. Nommez la vue `Q8`.",
+          "expectedCols": null,
+          "expectedRows": null,
+          "expectedLabel": null,
+          "orderSensitive": false,
+          "hashesSorted": [],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "vue",
+            "dml",
+            "imbrication",
+            "transaction"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "views",
+            "probes": [
+              "UPDATE Q8 SET RESP = NULL WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = -1 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 0 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 1 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 2 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 3 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 4 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 6 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 7 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 8 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 9 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 10 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 19 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 20 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 21 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 39 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 40 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 41 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 59 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 60 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 61 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 665 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 666 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 667 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 2316 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 2317 WHERE CODE = 'ACSI'",
+              "UPDATE Q8 SET RESP = 2318 WHERE CODE = 'ACSI'"
+            ],
+            "states": [
+              {
+                "objects": {
+                  "Q8": "f264bc5ee00f24e40bcc40758bb9b724397f4ab82485d6f3953440da48549c5b"
+                },
+                "probes": "9674e86d2a9cd566e2f8a2cbe0b414351bf3d409e615f141df8f28e0df704f05"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Requêtes complexes",
+      "items": [
+        {
+          "type": "instruction",
+          "text": "Répondez aux questions suivantes sur les données d'origine : rechargez auparavant la base de données exemple."
+        },
+        {
+          "type": "question",
+          "id": "q9",
+          "num": "9",
+          "statement": "Quels sont les numéros, noms et prénoms des étudiants ayant eu une note dans le module Principes des BD ou dans un de ses sous-modules direct ou pas ?",
+          "expectedCols": 3,
+          "expectedRows": 19,
+          "expectedLabel": "3 attributs, 19 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "2d61615b9b56ac5c7ebaacc6aa0d08f2abb134ffee153bc7eea7959d206e67d0"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "récursion",
+            "jointure",
+            "imbrication",
+            "semi-jointure"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q10",
+          "num": "10",
+          "statement": "Donnez les libellés des modules et les libellés des modules d'où ils sont directement issus.",
+          "expectedCols": 2,
+          "expectedRows": 30,
+          "expectedLabel": "2 attributs, 30 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "09edf1571326230c53e63a942d7ae9ae7644f152ed3e978270699a21c453f98e"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure"
+          ],
+          "sameAs": null
+        },
+        {
+          "type": "question",
+          "id": "q11",
+          "num": "11",
+          "statement": "Quels sont les groupes de seconde année, dans lesquels un étudiant a obtenu, pour le module Conception de SI, une meilleure note de test que le meilleur étudiant du groupe d'étudiants 3 dans le même Module ?",
+          "expectedCols": 1,
+          "expectedRows": 1,
+          "expectedLabel": "1 attribut, 1 tuple (4)",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "47b1ebb3b5fb943fb6457ab6cb798e25384883337f4fe5e57e9c4731d6111231"
+          ],
+          "hashOrdered": null,
+          "difficulty": 3,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "groupement",
+            "calcul-vertical",
+            "sous-requête"
+          ],
+          "sameAs": null
+        }
+      ]
+    },
+    {
+      "name": "Consultation des tables systèmes",
+      "items": [
+        {
+          "type": "text",
+          "text": "En lieu et place du schéma relationnel de la base de données exemple, focalisons-nous plutôt à présent sur les vues système suivantes issues du dictionnaire de données Oracle dont un extrait est présenté ci-après :"
+        },
+        {
+          "type": "text",
+          "text": ":::: schema-relationnel\n\n\n`User_Tables` (table\\_Name, tablespace\\_Name, ...)\n\n\n`User_Tab_Columns` (table\\_Name, column\\_Name, data\\_Type, ..., data\\_Length, ...)\n\n\n`User_Cons_Columns` (..., constraint\\_Name, table\\_Name, column\\_Name, ...)\n\n\n`User_Constraints` (..., constraint\\_Name, constraint\\_Type, table\\_Name, ...)\n\n\n`User_Objects` (object\\_Name, ..., object\\_Type, ...)\n\n\n::::"
+        },
+        {
+          "type": "text",
+          "text": "::: remarques\n\n\nLes valeurs de l'attribut `data_Type` correspondent aux types de données Oracle : `VARCHAR2`, `NUMBER`, `DATE`, etc.\n\n\nLa valeur de l'attribut `constraint_Type` peut être `P`, pour `PRIMAY KEY`, `R`, pour `REFERENCES`, `C` pour `CHECK`, etc.\n\n\nLa valeur de l'attribut `object_Type` peut être `TABLE`, `VIEW`, `FUNCTION`, `PROCEDURE`, `TRIGGER`, `INDEX`, etc.\n\n\n:::"
+        },
+        {
+          "type": "text",
+          "text": "Effectuez les requêtes sur les relations actuelles, pas celles éventuellement dans la corbeille. N'exécutez qu'une seule requête à la fois."
+        },
+        {
+          "type": "instruction",
+          "text": "En cas de doute ou de curiosité, n'oubliez pas d'utiliser la commande `DESCRIBE`."
+        },
+        {
+          "type": "question",
+          "id": "q12",
+          "num": "12",
+          "statement": "Quels sont les noms des attributs de la relation Professeur ?",
+          "expectedCols": 1,
+          "expectedRows": 7,
+          "expectedLabel": "1 attribut, 7 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "44a7b9f4bdea0037f5393633fb18bdde482882d96962defc28423cf0ff765b7a"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "projection",
+            "sélection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q13",
+          "num": "13",
+          "statement": "Quelle sont les tables ?",
+          "expectedCols": 1,
+          "expectedRows": 5,
+          "expectedLabel": "1 attribut, 5 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "e45ec979400303d5b310a18e48819972a09ee9549af0bd6e7885321a0ee53a8c"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "projection",
+            "sélection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q14",
+          "num": "14",
+          "statement": "Quelles sont les noms des contraintes d'intégrité ?",
+          "expectedCols": 1,
+          "expectedRows": 21,
+          "expectedLabel": "1 attribut, 21 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "c9151188889c5670f1f8d3866794d6b5650ae873c5d9e5b09cba72782d1680dc"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "projection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q15",
+          "num": "15",
+          "statement": "Quelles sont les noms des contraintes d'intégrité définies sur des relations ayant au moins un attribut de type VARCHAR2 de 20 caractères ou plus ?",
+          "expectedCols": 1,
+          "expectedRows": 14,
+          "expectedLabel": "1 attribut, 14 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "2787981d485a8ba6a2ceef8ca5ef5a0e54119e0bd80e7bbd93d50aa30059cc8c"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "imbrication",
+            "sélection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q16",
+          "num": "16",
+          "statement": "Quelles sont, pour les attributs de type NUMBER, les noms des contraintes et les noms des attributs sur lesquels elles portent ?",
+          "expectedCols": 2,
+          "expectedRows": 15,
+          "expectedLabel": "2 attributs, 15 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "93c5b129960f104ac10977dfcabe00b6da3ed5f8ae5eeeec0df0988152f19b36"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "sélection",
+            "distinct"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q17",
+          "num": "17",
+          "statement": "Quels sont les noms des contraintes, les noms attributs sur lesquels elles portent et le type de ces attributs, pour les relations ayant au moins un attribut de type NUMBER ?",
+          "expectedCols": 3,
+          "expectedRows": 27,
+          "expectedLabel": "3 attributs, 27 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "06ae06aa0df6cebb56f96a961f45533a2cc8e6e7b7c4fdab6983b77c8348b76c"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure",
+            "imbrication",
+            "sélection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q18",
+          "num": "18",
+          "statement": "Quelles sont les noms des contraintes de clefs primaires ?",
+          "expectedCols": 1,
+          "expectedRows": 5,
+          "expectedLabel": "1 attribut, 5 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "1c33ae43b797be8b17020b561c958311ed445ed44d6d018a27a347d23ae2bf9e"
+          ],
+          "hashOrdered": null,
+          "difficulty": 1,
+          "tags": [
+            "projection",
+            "sélection"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        },
+        {
+          "type": "question",
+          "id": "q19",
+          "num": "19",
+          "statement": "Quels sont les noms des attributs, et leurs relations correspondantes, d'attributs portant le même nom dans des relations différentes ?",
+          "expectedCols": 3,
+          "expectedRows": 7,
+          "expectedLabel": "3 attributs, 7 tuples",
+          "orderSensitive": false,
+          "hashesSorted": [
+            "00ea41eebb56ce9209209877f02c21230a89e3e40d50085a1793f83452d7fa7f"
+          ],
+          "hashOrdered": null,
+          "difficulty": 2,
+          "tags": [
+            "jointure"
+          ],
+          "sameAs": null,
+          "session": {
+            "requires": [],
+            "mode": "result",
+            "probes": [],
+            "states": []
+          }
+        }
+      ]
+    }
+  ],
+  "subjectPdf": "sujet.pdf"
+}
