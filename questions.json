@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "tdId": "r2.06-td6",
   "tdLabel": "R2.06 - TD6",
-  "title": "Requêtes avec SQL",
+  "title": "Vues, tables système et rappels SQL",
   "intro": "Formulez, en SQL, sur la base de données exemple, les requêtes d'interrogation suivantes.",
   "database": {
     "name": "gestion-pedagogique",
